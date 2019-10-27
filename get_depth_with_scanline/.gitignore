@@ -1,0 +1,5 @@
+
+*.o
+get_depth
+
+__pycache__
