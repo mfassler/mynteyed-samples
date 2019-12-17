@@ -28,6 +28,7 @@ git pull
 
 %build
 cd MYNT-EYE-D-SDK
+rm -rf _output
 rm -rf build
 mkdir build
 cd build
@@ -46,11 +47,11 @@ make install DESTDIR=%{buildroot}
 cd %{buildroot}/usr
 mv lib lib64
 cd lib64
+chmod +xxx 3rdparty/*
 mv 3rdparty/* ./
 rmdir 3rdparty
 cd cmake/mynteyed
 sed -i 's/\/usr\/lib\//\/usr\/lib64\//g' *.cmake
-
 
 %files
 #%doc
